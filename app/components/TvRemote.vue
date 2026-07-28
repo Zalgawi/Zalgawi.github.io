@@ -67,6 +67,11 @@ function press(id: string) {
   flash(id, ok);
 }
 
+function scrollToTop() {
+  nav.exit();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function cls(id: string) {
   return [pressed.value === id && "is-lit", missed.value === id && "is-dead"];
 }
@@ -244,31 +249,51 @@ onUnmounted(() => {
       aria-hidden="true"
     >
       <b class="display wdth-110 block text-[13px] leading-tight"
-        >Pass the remote</b
-      >
-      <span class="mt-0.5 block font-mono text-[9.5px] opacity-70"
-        >it drives the page</span
+        >Pass the remote!</b
       >
     </div>
 
-    <button
-      type="button"
-      aria-label="Show the navigation remote"
-      :aria-expanded="!closed"
-      class="fab rem-body absolute right-0 bottom-0 grid size-11.5 place-items-center rounded-full border text-muted hover:text-amber"
-      @click="setDock(true)"
-    >
-      <svg
-        width="19"
-        height="19"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.6"
-        stroke-linejoin="round"
+    <div class="absolute right-0 bottom-0 flex flex-col items-center gap-2">
+      <button
+        type="button"
+        aria-label="Scroll to top"
+        class="fab rem-body grid size-11.5 place-items-center rounded-full border text-muted hover:text-amber"
+        @click="scrollToTop"
       >
-        <path d="M9.5 3h5v6.5H21v5h-6.5V21h-5v-6.5H3v-5h6.5z" />
-      </svg>
-    </button>
+        <svg
+          width="19"
+          height="19"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 19V5" />
+          <path d="M5 12l7-7 7 7" />
+        </svg>
+      </button>
+
+      <button
+        type="button"
+        aria-label="Show the navigation remote"
+        :aria-expanded="!closed"
+        class="fab rem-body grid size-11.5 place-items-center rounded-full border text-muted hover:text-amber"
+        @click="setDock(true)"
+      >
+        <svg
+          width="19"
+          height="19"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linejoin="round"
+        >
+          <path d="M9.5 3h5v6.5H21v5h-6.5V21h-5v-6.5H3v-5h6.5z" />
+        </svg>
+      </button>
+    </div>
   </div>
 </template>

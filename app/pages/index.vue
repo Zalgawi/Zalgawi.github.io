@@ -113,7 +113,7 @@ const eyebrow =
         For the last six years I've been building products that have to work on
         everything - from web to mobile to Connected TV applications running on
         low-powered hardware. I care about delivering the best performance,
-        accessibility and and intuitive UI's that feel effortless to use.
+        accessibility and intuitive UI's that feel effortless to use.
       </p>
       <div class="flex flex-wrap gap-2.5">
         <a
