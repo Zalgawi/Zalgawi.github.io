@@ -134,6 +134,31 @@ const eyebrow =
       </div>
     </section>
 
+    <section
+      id="about"
+      :class="[shell, 'border-t border-line py-8']"
+      data-section
+    >
+      <p :class="eyebrow">Currently</p>
+      <dl
+        class="m-0 flex flex-wrap gap-6 rounded-xl border border-line bg-surface p-6"
+      >
+        <div v-for="n in now" :key="n.k" class="flex-1 basis-50">
+          <dt
+            class="mb-1.5 font-mono text-[10.5px] tracking-[.14em] text-muted uppercase"
+          >
+            {{ n.k }}
+          </dt>
+          <dd class="m-0 text-[15px]">
+            <span
+              v-if="n.dot"
+              class="mr-2 inline-block size-1.5 rounded-full bg-emerald-400 align-middle"
+            />{{ n.v }}
+          </dd>
+        </div>
+      </dl>
+    </section>
+
     <section :class="section" data-section>
       <p :class="eyebrow">What I do</p>
       <div class="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
@@ -186,7 +211,7 @@ const eyebrow =
       </div>
     </section>
 
-    <section :class="section" data-section>
+    <!--<section :class="section" data-section>
       <p :class="eyebrow">Interaction detail</p>
       <div class="rounded-2xl border border-line bg-surface p-6 md:p-8">
         <p class="mb-6 max-w-[58ch] text-[15px] text-muted">
@@ -213,28 +238,7 @@ const eyebrow =
           </button>
         </div>
       </div>
-    </section>
-
-    <section id="about" :class="section" data-section>
-      <p :class="eyebrow">Currently</p>
-      <dl
-        class="m-0 flex flex-wrap gap-6 rounded-xl border border-line bg-surface p-6"
-      >
-        <div v-for="n in now" :key="n.k" class="flex-1 basis-50">
-          <dt
-            class="mb-1.5 font-mono text-[10.5px] tracking-[.14em] text-muted uppercase"
-          >
-            {{ n.k }}
-          </dt>
-          <dd class="m-0 text-[15px]">
-            <span
-              v-if="n.dot"
-              class="mr-2 inline-block size-1.5 rounded-full bg-emerald-400 align-middle"
-            />{{ n.v }}
-          </dd>
-        </div>
-      </dl>
-    </section>
+    </section> -->
 
     <ProjectModal :project="active" @close="active = null" />
   </main>
