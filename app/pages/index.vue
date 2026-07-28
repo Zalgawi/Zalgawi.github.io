@@ -15,7 +15,7 @@ const pillars = [
     p: "WCAG-compliant components, real keyboard paths, and media controls that work for people who never touch a mouse. Built in from the start, not audited in at the end.",
   },
   {
-    h: "Performance under constraint",
+    h: "Lorem ipsum",
     p: "Years of shipping to TV hardware with a fraction of a phone's budget. It's a useful habit on the web, where the slowest device is the one that matters.",
   },
 ];
