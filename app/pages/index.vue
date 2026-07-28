@@ -126,7 +126,6 @@ const eyebrow =
         >
         <a
           :href="cvHref"
-          download
           target="_blank"
           rel="noopener"
           data-nav
