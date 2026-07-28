@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Volar takes over TS for .vue files
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  // Tailwind IntelliSense needs help seeing classes in :class bindings
+  // and in the string constants used for shared section styling.
+  "tailwindCSS.experimental.classRegex": [
+    ["class:\\s*'([^']*)'", "([^'\\s]*)"],
+    ["(?:const|let)\\s+\\w*(?:[Cc]lass|shell|section|eyebrow)\\w*\\s*=\\s*[`'\"]([^`'\"]*)"]
+  ],
+  "tailwindCSS.includeLanguages": { "vue": "html" },
+  "files.associations": { "*.css": "tailwindcss" }
+}

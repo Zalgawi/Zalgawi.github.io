@@ -1,0 +1,28 @@
+# dependencies
+node_modules
+
+# nuxt build artefacts
+.nuxt
+.output
+.data
+dist
+.nitro
+.cache
+
+# env
+.env
+.env.*
+!.env.example
+
+# editor / os
+.DS_Store
+*.log
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# ai tooling — keep out of a public repo
+.claude/
+CLAUDE.md
+.cursor/
+.aider*
