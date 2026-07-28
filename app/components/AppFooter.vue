@@ -8,11 +8,18 @@
         <a href="mailto:zaydkalgawi@gmail.com" data-nav class="hover:text-ice"
           >Email</a
         >
-        <a href="https://github.com/Zalgawi" data-nav class="hover:text-ice"
+        <a
+          href="https://github.com/Zalgawi"
+          target="_blank"
+          rel="noopener"
+          data-nav
+          class="hover:text-ice"
           >GitHub</a
         >
         <a
           href="https://linkedin.com/in/zaydalgawi"
+          target="_blank"
+          rel="noopener"
           data-nav
           class="hover:text-ice"
           >LinkedIn</a

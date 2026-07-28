@@ -127,6 +127,8 @@ const eyebrow =
         <a
           :href="cvHref"
           download
+          target="_blank"
+          rel="noopener"
           data-nav
           class="rounded-md border border-line bg-surface px-4.5 py-3 font-mono text-[13px]"
           >Download CV</a
