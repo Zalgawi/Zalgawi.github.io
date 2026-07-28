@@ -7,8 +7,8 @@ const active = ref<{ title: string; tag: string; path: string } | null>(null);
 
 const pillars = [
   {
-    h: "Responsive web / mobile apps",
-    p: "Component libraries other teams actually adopt — typed APIs, Storybook docs, and the unglamorous migration work that gets a legacy codebase onto them.",
+    h: "Component architecture",
+    p: "Building component libraries that other developers actually enjoy using. Typed APIs, Storybook documentation and migration strategies that keep large codebases moving.",
   },
   {
     h: "Accessibility",
