@@ -7,7 +7,7 @@ const active = ref<{ title: string; tag: string; path: string } | null>(null);
 
 const pillars = [
   {
-    h: "Design systems",
+    h: "Responsive web / mobile apps",
     p: "Component libraries other teams actually adopt — typed APIs, Storybook docs, and the unglamorous migration work that gets a legacy codebase onto them.",
   },
   {
@@ -93,7 +93,7 @@ const eyebrow =
       :class="[shell, 'pt-16 pb-12 md:pt-24 md:pb-20 lg:pt-30']"
       data-section
     >
-      <p :class="eyebrow">Front-end developer · Lisbon → Manchester</p>
+      <p :class="eyebrow">Front-end developer · Manchester</p>
       <h1
         class="display wdth-125 m-0 mb-7 text-[clamp(48px,12vw,132px)] leading-[.86] tracking-tight uppercase"
       >
