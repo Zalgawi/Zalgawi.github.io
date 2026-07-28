@@ -15,8 +15,8 @@ const pillars = [
     p: "WCAG-compliant components, real keyboard paths, and media controls that work for people who never touch a mouse. Built in from the start, not audited in at the end.",
   },
   {
-    h: "Lorem ipsum",
-    p: "Years of shipping to TV hardware with a fraction of a phone's budget. It's a useful habit on the web, where the slowest device is the one that matters.",
+    h: "Cross-platform delivery",
+    p: "Performance isn't an option, it's the standard. Years of shipping multi-platform applications has made me extra picky when it comes to maximising performance for even the worst and oldest of devices.",
   },
 ];
 
@@ -68,10 +68,13 @@ const platforms = [
 const now = [
   { k: "Status", v: "Open to mid–senior front-end roles", dot: true },
   { k: "Location", v: "Manchester, UK" },
-  { k: "Working in", v: "TypeScript, React, Nuxt, Tailwind" },
+  {
+    k: "Working in",
+    v: "TypeScript, Vue, Nuxt, Tailwind, React, React Native and LightningJS",
+  },
   {
     k: "Off the clock",
-    v: "Bouldering,  martial arts, graphic design, gaming",
+    v: "Bouldering,  Martial Arts, Graphic design, Gaming and all things geeky",
   },
 ];
 
@@ -105,11 +108,12 @@ const eyebrow =
         I build front-ends that
         <strong class="font-semibold text-ice">hold up</strong>.
       </p>
+
       <p class="mb-9 max-w-[54ch] text-[15.5px] text-muted">
-        Six years of design systems, accessible components and interfaces that
-        stay fast under pressure. Currently rebuilding Convatec's front-end on
-        Nuxt and Tailwind — previously shipping web and Connected TV apps for
-        global clients at FX Digital.
+        For the last six years I've been building products that have to work on
+        everything - from web to mobile to Connected TV applications running on
+        low-powered hardware. I care about delivering the best performance,
+        accessibility and and intuitive UI's that feel effortless to use.
       </p>
       <div class="flex flex-wrap gap-2.5">
         <a
