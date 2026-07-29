@@ -1,43 +1,39 @@
 @import "tailwindcss";
 
-/* Palette lives in plain custom properties so it can be swapped at runtime.
-   @nuxtjs/color-mode toggles data-theme on <html>. */
 :root {
-  --c-bg: #070A12;
-  --c-surface: #0D1421;
-  --c-surface-2: #121B2C;
-  --c-line: #1D2942;
-  --c-text: #E8EEF9;
-  --c-muted: #8496B4;
-  --c-ice: #6FC3E8;
-  --c-amber: #FFB627;
-  --c-glow: rgb(255 182 39 / .28);
-  --c-shadow: 0 18px 44px rgb(0 0 0 / .45);
-  --rem-face: linear-gradient(168deg, #202A3C 0%, #131B29 46%, #0C1320 100%);
-  --rem-edge: #2C3A52;
-  --rem-key: #1A2333;
-  --rem-key-line: #2A374D;
+  --c-bg: #070a12;
+  --c-surface: #0d1421;
+  --c-surface-2: #121b2c;
+  --c-line: #1d2942;
+  --c-text: #e8eef9;
+  --c-muted: #8496b4;
+  --c-ice: #6fc3e8;
+  --c-amber: #ffb627;
+  --c-glow: rgb(255 182 39 / 0.28);
+  --c-shadow: 0 18px 44px rgb(0 0 0 / 0.45);
+  --rem-face: linear-gradient(168deg, #202a3c 0%, #131b29 46%, #0c1320 100%);
+  --rem-edge: #2c3a52;
+  --rem-key: #1a2333;
+  --rem-key-line: #2a374d;
 }
 
 [data-theme="light"] {
-  --c-bg: #F4F6FA;
-  --c-surface: #FFFFFF;
-  --c-surface-2: #EDF1F7;
-  --c-line: #D7DEEA;
-  --c-text: #0A1120;
-  --c-muted: #55688A;
-  --c-ice: #0B6DA4;
-  --c-amber: #9A5F00;
-  --c-glow: rgb(154 95 0 / .18);
-  --c-shadow: 0 18px 44px rgb(16 32 60 / .16);
-  --rem-face: linear-gradient(168deg, #FFFFFF 0%, #EDF1F7 48%, #DDE4EE 100%);
-  --rem-edge: #C6D0DE;
-  --rem-key: #F6F8FC;
-  --rem-key-line: #D2DAE6;
+  --c-bg: #f4f6fa;
+  --c-surface: #ffffff;
+  --c-surface-2: #edf1f7;
+  --c-line: #d7deea;
+  --c-text: #0a1120;
+  --c-muted: #55688a;
+  --c-ice: #0b6da4;
+  --c-amber: #9a5f00;
+  --c-glow: rgb(154 95 0 / 0.18);
+  --c-shadow: 0 18px 44px rgb(16 32 60 / 0.16);
+  --rem-face: linear-gradient(168deg, #ffffff 0%, #edf1f7 48%, #dde4ee 100%);
+  --rem-edge: #c6d0de;
+  --rem-key: #f6f8fc;
+  --rem-key-line: #d2dae6;
 }
 
-/* `inline` keeps the var reference in the generated utility, which is what
-   lets bg-surface flip when the block above swaps values. */
 @theme inline {
   --color-bg: var(--c-bg);
   --color-surface: var(--c-surface);
@@ -59,26 +55,51 @@
     background: var(--c-bg);
     color-scheme: dark;
   }
-  html[data-theme="light"] { color-scheme: light; }
+  html[data-theme="light"] {
+    color-scheme: light;
+  }
 
   body {
     font-family: var(--font-body);
     background: var(--c-bg);
     color: var(--c-text);
-    transition: background .3s ease, color .3s ease;
+    transition:
+      background 0.3s ease,
+      color 0.3s ease;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after { transition: none !important; animation: none !important; }
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+      animation: none !important;
+    }
   }
 }
 
 @layer components {
-  .display { font-family: var(--font-display); }
-  .wdth-125 { font-variation-settings: "wdth" 125, "wght" 800; }
-  .wdth-110 { font-variation-settings: "wdth" 110, "wght" 700; }
-  .wdth-110-sm { font-variation-settings: "wdth" 110, "wght" 600; }
+  .display {
+    font-family: var(--font-display);
+  }
+  .wdth-125 {
+    font-variation-settings:
+      "wdth" 125,
+      "wght" 800;
+  }
+  .wdth-110 {
+    font-variation-settings:
+      "wdth" 110,
+      "wght" 700;
+  }
+  .wdth-110-sm {
+    font-variation-settings:
+      "wdth" 110,
+      "wght" 600;
+  }
 
   .eyebrow::after {
     content: "";
@@ -87,7 +108,6 @@
     background: var(--c-line);
   }
 
-  /* Focus ring — positioned by useSpatialNav, so it can't be a utility. */
   .focus-ring {
     position: fixed;
     inset-block-start: 0;
@@ -99,61 +119,312 @@
     z-index: 60;
     box-shadow: 0 0 0 4px var(--c-glow);
   }
-  .focus-ring.is-on { opacity: 1; }
+  .focus-ring.is-on {
+    opacity: 1;
+  }
   .focus-ring.is-animated {
-    transition: transform .2s cubic-bezier(.32,.72,.3,1),
-                width .2s cubic-bezier(.32,.72,.3,1),
-                height .2s cubic-bezier(.32,.72,.3,1);
+    transition:
+      transform 0.2s cubic-bezier(0.32, 0.72, 0.3, 1),
+      width 0.2s cubic-bezier(0.32, 0.72, 0.3, 1),
+      height 0.2s cubic-bezier(0.32, 0.72, 0.3, 1);
   }
 
-  /* Remote hardware surfaces */
   .rem-body {
     background: var(--rem-face);
     border-color: var(--rem-edge);
-    box-shadow: var(--c-shadow), inset 0 1px 0 rgb(255 255 255 / .09);
+    box-shadow:
+      var(--c-shadow),
+      inset 0 1px 0 rgb(255 255 255 / 0.09);
   }
-  .rem-key { background: var(--rem-key); border-color: var(--rem-key-line); }
-  .rem-line { background: var(--rem-key-line); }
+  .rem-key {
+    background: var(--rem-key);
+    border-color: var(--rem-key-line);
+  }
+  .rem-line {
+    background: var(--rem-key-line);
+  }
   .rem-ok {
     background: var(--rem-face);
-    box-shadow: 0 0 0 3px var(--rem-key), inset 0 1px 0 rgb(255 255 255 / .08);
+    box-shadow:
+      0 0 0 3px var(--rem-key),
+      inset 0 1px 0 rgb(255 255 255 / 0.08);
   }
-  .pad-btn:hover { background: rgb(127 160 200 / .1); }
+  .pad-btn:hover {
+    background: rgb(127 160 200 / 0.1);
+  }
 
-  .is-lit  { background: var(--c-amber) !important; color: #0A0F18 !important; border-color: var(--c-amber) !important; }
-  .is-dead { animation: nudge .18s ease; }
+  .is-lit {
+    background: var(--c-amber) !important;
+    color: #0a0f18 !important;
+    border-color: var(--c-amber) !important;
+  }
+  .is-dead {
+    animation: nudge 0.18s ease;
+  }
   @keyframes nudge {
-    0%, 100% { transform: translateX(0); }
-    30% { transform: translateX(-2px); }
-    70% { transform: translateX(2px); }
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    30% {
+      transform: translateX(-2px);
+    }
+    70% {
+      transform: translateX(2px);
+    }
   }
 
-  .dock.is-live .led { background: var(--c-amber); box-shadow: 0 0 7px var(--c-amber); }
-
-  /* Collapse state. Unlayered would be safer against utility conflicts, but
-     nothing here sets scale/translate via a utility, so the layer is fine. */
+  .dock.is-live .led {
+    background: var(--c-amber);
+    box-shadow: 0 0 7px var(--c-amber);
+  }
   .dock .remote {
-    transition: opacity .2s ease, scale .24s cubic-bezier(.32,.72,.3,1),
-                translate .24s cubic-bezier(.32,.72,.3,1), visibility .24s;
+    transition:
+      opacity 0.2s ease,
+      scale 0.24s cubic-bezier(0.32, 0.72, 0.3, 1),
+      translate 0.24s cubic-bezier(0.32, 0.72, 0.3, 1),
+      visibility 0.24s;
   }
   .dock.is-closed .remote {
-    opacity: 0; visibility: hidden; scale: .7; translate: 14px 26px; pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    scale: 0.7;
+    translate: 14px 26px;
+    pointer-events: none;
   }
   .dock .fab {
-    opacity: 0; visibility: hidden; scale: .6;
-    transition: opacity .2s ease, scale .24s cubic-bezier(.32,.72,.3,1),
-                visibility .24s, color .15s ease;
+    opacity: 0;
+    visibility: hidden;
+    scale: 0.6;
+    transition:
+      opacity 0.2s ease,
+      scale 0.24s cubic-bezier(0.32, 0.72, 0.3, 1),
+      visibility 0.24s,
+      color 0.15s ease;
   }
-  .dock.is-closed .fab { opacity: 1; visibility: visible; scale: 1; }
+  .dock.is-closed .fab {
+    opacity: 1;
+    visibility: visible;
+    scale: 1;
+  }
 
   .hint {
-    opacity: 0; visibility: hidden; translate: 6px 0;
-    transition: opacity .3s ease, translate .3s cubic-bezier(.32,.72,.3,1), visibility .3s;
+    opacity: 0;
+    visibility: hidden;
+    translate: 6px 0;
+    transition:
+      opacity 0.3s ease,
+      translate 0.3s cubic-bezier(0.32, 0.72, 0.3, 1),
+      visibility 0.3s;
   }
-  .hint.is-open { opacity: 1; visibility: visible; translate: 0 0; }
+  .hint.is-open {
+    opacity: 1;
+    visibility: visible;
+    translate: 0 0;
+  }
 
   dialog::backdrop {
-    background: rgb(3 7 15 / .72);
+    background: rgb(3 7 15 / 0.72);
     backdrop-filter: blur(6px);
+  }
+}
+
+:root {
+  --backdrop-strength: 0.8;
+  --backdrop-blur: 12px;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  /* Nothing inside can affect layout elsewhere, so these vw-sized shapes
+     never trigger a reflow on the page itself. */
+  contain: strict;
+}
+
+.backdrop i {
+  position: absolute;
+  display: block;
+  border: 0;
+  background: var(--fill);
+  opacity: calc(var(--shape-o, 0.5) * var(--backdrop-strength));
+  filter: blur(calc(var(--blur, 1) * var(--backdrop-blur)));
+  /* rotate and translate are separate CSS properties, so the parallax
+     never clobbers the tilt the way a shared `transform` would. */
+  translate: 0 calc(var(--scroll-y, 0) * var(--depth, 0) * -1px);
+  will-change: translate;
+}
+
+.backdrop .b-round {
+  border-radius: 50%;
+}
+.backdrop .b-rect {
+  border-radius: 12%;
+}
+.backdrop .b-pill {
+  border-radius: 999px;
+}
+
+/* Mixes of your own accent tokens, so light mode adapts with no second palette. */
+.f-ice {
+  --fill: color-mix(in srgb, var(--c-ice) 38%, transparent);
+}
+.f-ice2 {
+  --fill: color-mix(in srgb, var(--c-ice) 22%, transparent);
+}
+.f-amb {
+  --fill: color-mix(in srgb, var(--c-amber) 26%, transparent);
+}
+.f-neu {
+  --fill: color-mix(in srgb, var(--c-text) 14%, transparent);
+}
+
+.backdrop .s1 {
+  --depth: 0.07;
+  --shape-o: 0.55;
+  --blur: 1.3;
+  width: 42vw;
+  height: 32vw;
+  top: -8vw;
+  right: -8vw;
+  rotate: 12deg;
+}
+.backdrop .s2 {
+  --depth: 0.16;
+  --shape-o: 0.5;
+  --blur: 1;
+  width: 26vw;
+  height: 26vw;
+  top: 40vh;
+  left: -8vw;
+}
+.backdrop .s3 {
+  --depth: 0.3;
+  --shape-o: 0.45;
+  --blur: 0.55;
+  width: 11vw;
+  height: 11vw;
+  top: 20vh;
+  right: 24vw;
+}
+.backdrop .s4 {
+  --depth: 0.24;
+  --shape-o: 0.4;
+  --blur: 0.7;
+  width: 20vw;
+  height: 7vw;
+  top: 72vh;
+  left: 16vw;
+  rotate: -6deg;
+}
+.backdrop .s5 {
+  --depth: 0.09;
+  --shape-o: 0.5;
+  --blur: 1.5;
+  width: 48vw;
+  height: 48vw;
+  top: 120vh;
+  right: -18vw;
+}
+.backdrop .s6 {
+  --depth: 0.34;
+  --shape-o: 0.4;
+  --blur: 0.5;
+  width: 13vw;
+  height: 13vw;
+  top: 150vh;
+  left: 10vw;
+}
+.backdrop .s7 {
+  --depth: 0.2;
+  --shape-o: 0.45;
+  --blur: 0.9;
+  width: 30vw;
+  height: 20vw;
+  top: 186vh;
+  left: 26vw;
+  rotate: -8deg;
+}
+.backdrop .s8 {
+  --depth: 0.42;
+  --shape-o: 0.5;
+  --blur: 0.4;
+  width: 9vw;
+  height: 9vw;
+  top: 168vh;
+  right: 28vw;
+}
+.backdrop .s9 {
+  --depth: 0.15;
+  --shape-o: 0.5;
+  --blur: 1.2;
+  width: 36vw;
+  height: 26vw;
+  top: 248vh;
+  left: -9vw;
+  rotate: 7deg;
+}
+.backdrop .s10 {
+  --depth: 0.28;
+  --shape-o: 0.4;
+  --blur: 0.6;
+  width: 16vw;
+  height: 16vw;
+  top: 288vh;
+  right: 12vw;
+}
+.backdrop .s11 {
+  --depth: 0.38;
+  --shape-o: 0.45;
+  --blur: 0.5;
+  width: 22vw;
+  height: 8vw;
+  top: 322vh;
+  left: 22vw;
+  rotate: 4deg;
+}
+.backdrop .s12 {
+  --depth: 0.12;
+  --shape-o: 0.5;
+  --blur: 1.4;
+  width: 40vw;
+  height: 40vw;
+  top: 348vh;
+  right: -14vw;
+}
+
+header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- glass surfaces ---------- */
+.bg-surface {
+  background-color: color-mix(in srgb, var(--c-surface) 55%, transparent);
+  backdrop-filter: blur(20px) saturate(1.25);
+  -webkit-backdrop-filter: blur(20px) saturate(1.25);
+}
+
+.bg-surface-2 {
+  background-color: color-mix(in srgb, var(--c-surface-2) 55%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* The modal stays opaque — shapes drifting behind a dialog is noise, not depth. */
+dialog.bg-surface {
+  background-color: var(--c-surface);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop i {
+    translate: none !important;
   }
 }
