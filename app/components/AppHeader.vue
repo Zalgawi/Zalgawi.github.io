@@ -3,10 +3,10 @@ const open = ref(false);
 const colorMode = useColorMode();
 
 const links = [
-  { to: "/#work", label: "Work" },
   { to: "/#about", label: "About" },
-  { to: "/#contact", label: "Contact" },
+  { to: "/#work", label: "Work" },
   { to: "/#experience", label: "Experience" },
+  { to: "/#contact", label: "Contact" },
 ];
 
 const isDark = computed(() => colorMode.value === "dark");

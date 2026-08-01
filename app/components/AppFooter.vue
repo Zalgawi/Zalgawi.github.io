@@ -1,10 +1,10 @@
 <template>
   <footer class="border-t border-line pt-8 pb-32">
     <div
-      class="mx-auto flex max-w-[1180px] flex-wrap justify-between gap-4 px-5 font-mono text-xs text-muted sm:px-8 lg:px-18"
+      class="mx-auto flex max-w-[1180px] flex-col items-center gap-4 px-5 text-center font-mono text-xs text-muted sm:px-8 lg:px-18"
     >
       <span>© {{ new Date().getFullYear() }} Zayd Algawi </span>
-      <nav id="contact" class="flex gap-4">
+      <nav class="flex flex-wrap justify-center gap-4">
         <a href="mailto:zaydkalgawi@gmail.com" data-nav class="hover:text-ice"
           >Email</a
         >

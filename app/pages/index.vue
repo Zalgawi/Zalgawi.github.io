@@ -1,9 +1,11 @@
-<script setup lang="ts">
+﻿<script setup lang="ts">
 const { data: projects } = await useAsyncData("work", () =>
   queryCollection("work").order("order", "ASC").all(),
 );
 
 const active = ref<{ title: string; tag: string; path: string } | null>(null);
+
+const { email, copied, copyEmail } = useContactEmail();
 
 const pillars = [
   {
@@ -120,10 +122,14 @@ const eyebrow =
           >See the work</a
         >
         <a
-          href="#contact"
+          :href="`mailto:${email}`"
           data-nav
           class="rounded-md border border-line bg-surface px-4.5 py-3 font-mono text-[13px]"
-          >Get in touch</a
+          @click="copyEmail"
+          ><!-- Both labels are 12 characters and the button is monospace, so
+               the swap costs no layout shift. -->{{
+            copied ? "Email copied" : "Get in touch"
+          }}</a
         >
         <a
           :href="cvHref"
@@ -213,6 +219,18 @@ const eyebrow =
           </div>
         </div>
       </div>
+    </section>
+
+    <section id="contact" :class="section" data-section>
+      <p :class="eyebrow">Hit me up</p>
+      <h2 class="display wdth-110 m-0 mb-3 text-[clamp(26px,4vw,34px)]">
+        Send me a message
+      </h2>
+      <p class="mb-8 max-w-[52ch] text-[15.5px] text-muted">
+        Roles, ideas, questions — it all lands straight in my inbox.
+      </p>
+
+      <ContactForm />
     </section>
 
     <ProjectModal :project="active" @close="active = null" />

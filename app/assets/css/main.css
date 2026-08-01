@@ -242,8 +242,6 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  /* Nothing inside can affect layout elsewhere, so these vw-sized shapes
-     never trigger a reflow on the page itself. */
   contain: strict;
 }
 
@@ -254,8 +252,6 @@
   background: var(--fill);
   opacity: calc(var(--shape-o, 0.5) * var(--backdrop-strength));
   filter: blur(calc(var(--blur, 1) * var(--backdrop-blur)));
-  /* rotate and translate are separate CSS properties, so the parallax
-     never clobbers the tilt the way a shared `transform` would. */
   translate: 0 calc(var(--scroll-y, 0) * var(--depth, 0) * -1px);
   will-change: translate;
 }
@@ -270,7 +266,6 @@
   border-radius: 999px;
 }
 
-/* Mixes of your own accent tokens, so light mode adapts with no second palette. */
 .f-ice {
   --fill: color-mix(in srgb, var(--c-ice) 38%, transparent);
 }
@@ -626,26 +621,16 @@
   rotate: 8deg;
 }
 
-/* Lifts page content above the fixed .backdrop (z-index 0). The header is
-   deliberately excluded — it needs `position: sticky` from its utility class,
-   and this rule is unlayered, so listing it here would override that. */
 main,
 footer {
   position: relative;
   z-index: 1;
 }
 
-/* Logo watermarks on project cards ship as white-filled SVGs, which vanish
-   against the light surface. Inverting flips them to near-black there. */
 [data-theme="light"] .card-mark {
   filter: invert(1);
 }
 
-/* ---------- text over artwork ----------
-   Photo cards put small muted type straight onto image detail, where the
-   letterforms lose against the texture behind them. Three things do the work:
-   soften the photo so it stops competing, drop a bottom-weighted scrim under
-   the copy, and give the type a tight dark shadow so edges stay defined. */
 .card-photo-img {
   filter: blur(1.5px) brightness(0.85) saturate(1);
 }
@@ -658,8 +643,6 @@ footer {
   );
 }
 
-/* Fixed light values rather than theme tokens: the scrim is dark in both
-   themes, so the copy should be too. */
 .card-photo h3 {
   color: #fff;
   text-shadow: 0 1px 12px rgb(0 0 0 / 0.7);
@@ -668,8 +651,6 @@ footer {
   color: rgb(255 255 255 / 0.9);
   text-shadow: 0 1px 8px rgb(0 0 0 / 0.75);
 }
-/* Amber over the photo — warmer than ice against the artwork, and it ties the
-   cards to the accent already used for focus and the remote. */
 .card-photo .card-tag {
   color: var(--c-amber);
   text-shadow: 0 1px 10px rgb(0 0 0 / 0.8);
@@ -682,7 +663,6 @@ footer {
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* The warm lift on hover, shared by every card. */
 .project-card {
   transition:
     box-shadow 0.28s ease,
@@ -694,9 +674,6 @@ footer {
     0 14px 44px -16px var(--c-glow);
 }
 
-/* A brand-coloured card replaces --c-surface with an arbitrary colour, so the
-   ink/muted tokens lose their contrast guarantee. These pin the copy to white,
-   which is the readable choice against the darker end of a brand ramp. */
 .card-brand {
   border-color: rgb(255 255 255 / 0.22);
 }
@@ -709,7 +686,7 @@ footer {
   text-shadow: 0 1px 8px rgb(0 40 24 / 0.5);
 }
 .card-brand .card-tag {
-  color: rgb(255 255 255 / 0.95);
+  color: #ffb627;
   text-shadow: 0 1px 8px rgb(0 40 24 / 0.5);
 }
 .card-brand .card-chip {
@@ -720,13 +697,10 @@ footer {
 .card-brand:hover {
   border-color: rgb(255 255 255 / 0.45);
 }
-/* The watermark is already white — the light-theme invert would turn it black
-   on green, so it stays disabled on branded cards. */
 [data-theme="light"] .card-brand .card-mark {
   filter: none;
 }
 
-/* ---------- glass surfaces ---------- */
 .bg-surface {
   background-color: color-mix(in srgb, var(--c-surface) 55%, transparent);
   backdrop-filter: blur(20px) saturate(1.25);
@@ -739,7 +713,6 @@ footer {
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* The modal stays opaque — shapes drifting behind a dialog is noise, not depth. */
 dialog.bg-surface {
   background-color: var(--c-surface);
   backdrop-filter: none;
