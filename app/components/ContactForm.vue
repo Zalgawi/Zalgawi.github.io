@@ -1,24 +1,13 @@
 <script setup lang="ts">
 const { email, copied, copyEmail } = useContactEmail();
 
-const topics = [
-  "Full-time role",
-  "Speaking",
-  "Consulting",
-  "Mentorship",
-  "Something else",
-];
-
 const form = reactive({
   name: "",
   email: "",
   company: "",
-  topic: topics[0]!,
   message: "",
 });
 
-// No backend here, so submitting hands the composed message to the visitor's
-// mail client rather than sending anything itself.
 const mailtoHref = computed(() => {
   const body = [
     `Name: ${form.name}`,
@@ -31,11 +20,9 @@ const mailtoHref = computed(() => {
     .join("\n");
 
   const q = new URLSearchParams({
-    subject: `Portfolio enquiry — ${form.topic}`,
+    subject: "Zayd A. Portfolio Enquiry",
     body,
   });
-  // URLSearchParams encodes spaces as "+", which mail clients show literally
-  // instead of as spaces.
   return `mailto:${email}?${q.toString().replace(/\+/g, "%20")}`;
 });
 
