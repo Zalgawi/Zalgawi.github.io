@@ -5,8 +5,6 @@ const { data: projects } = await useAsyncData("work", () =>
 
 const active = ref<{ title: string; tag: string; path: string } | null>(null);
 
-const { email, copied, copyEmail } = useContactEmail();
-
 const pillars = [
   {
     h: "Component architecture",
@@ -122,14 +120,10 @@ const eyebrow =
           >See the work</a
         >
         <a
-          :href="`mailto:${email}`"
+          href="#contact"
           data-nav
           class="rounded-md border border-line bg-surface px-4.5 py-3 font-mono text-[13px]"
-          @click="copyEmail"
-          ><!-- Both labels are 12 characters and the button is monospace, so
-               the swap costs no layout shift. -->{{
-            copied ? "Email copied" : "Get in touch"
-          }}</a
+          >Get in touch</a
         >
         <a
           :href="cvHref"
