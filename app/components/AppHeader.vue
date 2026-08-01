@@ -4,9 +4,9 @@ const colorMode = useColorMode();
 
 const links = [
   { to: "/#work", label: "Work" },
-  { to: "/#experience", label: "Experience" },
   { to: "/#about", label: "About" },
   { to: "/#contact", label: "Contact" },
+  { to: "/#experience", label: "Experience" },
 ];
 
 const isDark = computed(() => colorMode.value === "dark");

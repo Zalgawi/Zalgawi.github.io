@@ -1,15 +1,16 @@
 ---
-title: "Fuse+"
-tag: "FX Digital · Streaming"
-summary: "Streaming app built for the living room and shipped across the full spread of platforms."
-stack: ["LightningJS", "JavaScript", "Focus management"]
+title: "GCN+"
+tag: "FX Digital · Web & TV"
+summary: "Contributed towards building the Global Cycling Network's GCN+ streaming app on AppleTV"
+stack: ["React Native", "AppleTV"]
+image: "cgnImage.png"
 year: "2020—2022"
-order: 5
+order: 6
 ---
 
 ## What it was
 
-A living-room streaming app deployed across nine Connected TV platforms from one codebase.
+Two ends of the same skillset: a TV app for live music, and a real-time WebGL experience for the stage.
 
 ## What I owned
 

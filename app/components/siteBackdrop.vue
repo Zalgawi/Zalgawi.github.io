@@ -22,8 +22,6 @@ onUnmounted(() => window.removeEventListener("scroll", onScroll));
 </script>
 
 <template>
-  <!-- Class names are prefixed b-* deliberately: `ring` is a real Tailwind
-       utility and would have painted a 1px box-shadow on every circle. -->
   <div class="backdrop" aria-hidden="true">
     <i class="b-rect s1 f-ice" />
     <i class="b-round s2 f-amb" />
@@ -39,5 +37,35 @@ onUnmounted(() => window.removeEventListener("scroll", onScroll));
     <i class="b-round s10 f-amb" />
     <i class="b-pill s11 f-neu" />
     <i class="b-round s12 f-ice" />
+
+    <i class="b-round s13 f-amb" />
+    <i class="b-pill s14 f-ice2" />
+    <i class="b-rect s15 f-neu" />
+    <i class="b-round s16 f-ice" />
+
+    <i class="b-round s17 f-ice2" />
+    <i class="b-rect s18 f-amb" />
+    <i class="b-round s19 f-neu" />
+    <i class="b-pill s20 f-ice" />
+
+    <i class="b-round s21 f-amb" />
+    <i class="b-rect s22 f-ice2" />
+    <i class="b-round s23 f-neu" />
+    <i class="b-rect s24 f-ice" />
+
+    <i class="b-round s25 f-ice" />
+    <i class="b-pill s26 f-amb" />
+    <i class="b-rect s27 f-ice2" />
+    <i class="b-round s28 f-neu" />
+
+    <i class="b-round s29 f-amb" />
+    <i class="b-rect s30 f-ice" />
+    <i class="b-pill s31 f-neu" />
+    <i class="b-round s32 f-ice2" />
+
+    <i class="b-round s33 f-ice" />
+    <i class="b-rect s34 f-amb" />
+    <i class="b-round s35 f-neu" />
+    <i class="b-pill s36 f-ice2" />
   </div>
 </template>

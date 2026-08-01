@@ -4,6 +4,7 @@ tag: "Convatec · Accessibility"
 summary: "Retrofitted a native video player with A11y-compliant controls and complete keyboard paths."
 stack: ["WCAG", "ARIA", "Keyboard"]
 year: "2024"
+image: "A11yCard.jpg"
 order: 3
 ---
 

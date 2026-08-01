@@ -13,6 +13,11 @@ export default defineContentConfig({
         summary: z.string(),
         stack: z.array(z.string()),
         year: z.string(),
+        // Bare filename of an image in app/assets, e.g. "TTVImage.jpeg".
+        // ProjectCard resolves it to a hashed build URL.
+        image: z.string().optional(),
+        // One hex for a flat card background, two to blend between them.
+        brand: z.array(z.string()).min(1).max(2).optional(),
         order: z.number().default(99)
       })
     })

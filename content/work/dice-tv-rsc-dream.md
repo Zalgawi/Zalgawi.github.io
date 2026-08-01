@@ -1,8 +1,9 @@
 ---
-title: "Dice TV & RSC Dream"
+title: "Royal Shakespeare Company, Dream"
 tag: "FX Digital · Web & TV"
-summary: "Live music streaming on the big screen, plus interactive web work for the Royal Shakespeare Company."
-stack: ["LightningJS", "Three.js", "WebGL"]
+summary: "Built the custom WordPress theme for the Marketing website for the RSC Dream digital theatrical performance"
+stack: ["Roots", "WordPress"]
+image: "dream.jpg"
 year: "2020—2022"
 order: 6
 ---

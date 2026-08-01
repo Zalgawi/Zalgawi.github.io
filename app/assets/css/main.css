@@ -9,6 +9,7 @@
   --c-muted: #8496b4;
   --c-ice: #6fc3e8;
   --c-amber: #ffb627;
+  --c-led: #34d399;
   --c-glow: rgb(255 182 39 / 0.28);
   --c-shadow: 0 18px 44px rgb(0 0 0 / 0.45);
   --rem-face: linear-gradient(168deg, #202a3c 0%, #131b29 46%, #0c1320 100%);
@@ -26,6 +27,7 @@
   --c-muted: #55688a;
   --c-ice: #0b6da4;
   --c-amber: #9a5f00;
+  --c-led: #0f9d6b;
   --c-glow: rgb(154 95 0 / 0.18);
   --c-shadow: 0 18px 44px rgb(16 32 60 / 0.16);
   --rem-face: linear-gradient(168deg, #ffffff 0%, #edf1f7 48%, #dde4ee 100%);
@@ -175,8 +177,8 @@
   }
 
   .dock.is-live .led {
-    background: var(--c-amber);
-    box-shadow: 0 0 7px var(--c-amber);
+    background: var(--c-led);
+    box-shadow: 0 0 7px var(--c-led);
   }
   .dock .remote {
     transition:
@@ -230,8 +232,8 @@
 }
 
 :root {
-  --backdrop-strength: 0.8;
-  --backdrop-blur: 12px;
+  --backdrop-strength: 1.05;
+  --backdrop-blur: 7px;
 }
 
 .backdrop {
@@ -395,12 +397,333 @@
   top: 348vh;
   right: -14vw;
 }
+.backdrop .s13 {
+  --depth: 0.36;
+  --shape-o: 0.4;
+  --blur: 0.45;
+  width: 8vw;
+  height: 8vw;
+  top: 8vh;
+  left: 30vw;
+}
+.backdrop .s14 {
+  --depth: 0.22;
+  --shape-o: 0.4;
+  --blur: 0.8;
+  width: 18vw;
+  height: 6vw;
+  top: 56vh;
+  right: 6vw;
+  rotate: 9deg;
+}
+.backdrop .s15 {
+  --depth: 0.31;
+  --shape-o: 0.45;
+  --blur: 0.6;
+  width: 14vw;
+  height: 14vw;
+  top: 96vh;
+  left: 4vw;
+  rotate: -12deg;
+}
+.backdrop .s16 {
+  --depth: 0.45;
+  --shape-o: 0.5;
+  --blur: 0.35;
+  width: 7vw;
+  height: 7vw;
+  top: 110vh;
+  right: 34vw;
+}
+.backdrop .s17 {
+  --depth: 0.18;
+  --shape-o: 0.5;
+  --blur: 1.1;
+  width: 20vw;
+  height: 20vw;
+  top: 136vh;
+  right: 4vw;
+}
+.backdrop .s18 {
+  --depth: 0.13;
+  --shape-o: 0.45;
+  --blur: 1.25;
+  width: 28vw;
+  height: 22vw;
+  top: 204vh;
+  right: -6vw;
+  rotate: 10deg;
+}
+.backdrop .s19 {
+  --depth: 0.33;
+  --shape-o: 0.4;
+  --blur: 0.55;
+  width: 12vw;
+  height: 12vw;
+  top: 226vh;
+  left: 12vw;
+}
+.backdrop .s20 {
+  --depth: 0.4;
+  --shape-o: 0.45;
+  --blur: 0.45;
+  width: 17vw;
+  height: 6vw;
+  top: 262vh;
+  right: 20vw;
+  rotate: -5deg;
+}
+.backdrop .s21 {
+  --depth: 0.17;
+  --shape-o: 0.4;
+  --blur: 1.15;
+  width: 24vw;
+  height: 24vw;
+  top: 300vh;
+  left: -6vw;
+}
+.backdrop .s22 {
+  --depth: 0.26;
+  --shape-o: 0.45;
+  --blur: 0.75;
+  width: 18vw;
+  height: 13vw;
+  top: 334vh;
+  left: 8vw;
+  rotate: -9deg;
+}
+.backdrop .s23 {
+  --depth: 0.43;
+  --shape-o: 0.5;
+  --blur: 0.4;
+  width: 10vw;
+  height: 10vw;
+  top: 356vh;
+  right: 26vw;
+}
+.backdrop .s24 {
+  --depth: 0.28;
+  --shape-o: 0.45;
+  --blur: 0.65;
+  width: 15vw;
+  height: 15vw;
+  top: 178vh;
+  left: 2vw;
+  rotate: 15deg;
+}
+.backdrop .s25 {
+  --depth: 0.4;
+  --shape-o: 0.5;
+  --blur: 0.4;
+  width: 9vw;
+  height: 9vw;
+  top: 30vh;
+  left: 8vw;
+}
+.backdrop .s26 {
+  --depth: 0.29;
+  --shape-o: 0.45;
+  --blur: 0.6;
+  width: 15vw;
+  height: 5vw;
+  top: 48vh;
+  left: 40vw;
+  rotate: -7deg;
+}
+.backdrop .s27 {
+  --depth: 0.35;
+  --shape-o: 0.45;
+  --blur: 0.5;
+  width: 12vw;
+  height: 9vw;
+  top: 64vh;
+  right: 30vw;
+  rotate: 14deg;
+}
+.backdrop .s28 {
+  --depth: 0.24;
+  --shape-o: 0.4;
+  --blur: 0.85;
+  width: 13vw;
+  height: 13vw;
+  top: 84vh;
+  right: 12vw;
+}
+.backdrop .s29 {
+  --depth: 0.46;
+  --shape-o: 0.5;
+  --blur: 0.35;
+  width: 8vw;
+  height: 8vw;
+  top: 160vh;
+  right: 16vw;
+}
+.backdrop .s30 {
+  --depth: 0.37;
+  --shape-o: 0.45;
+  --blur: 0.45;
+  width: 11vw;
+  height: 11vw;
+  top: 196vh;
+  left: 34vw;
+  rotate: -16deg;
+}
+.backdrop .s31 {
+  --depth: 0.21;
+  --shape-o: 0.4;
+  --blur: 0.9;
+  width: 21vw;
+  height: 7vw;
+  top: 215vh;
+  left: -4vw;
+  rotate: 6deg;
+}
+.backdrop .s32 {
+  --depth: 0.3;
+  --shape-o: 0.45;
+  --blur: 0.7;
+  width: 14vw;
+  height: 14vw;
+  top: 238vh;
+  right: 32vw;
+}
+.backdrop .s33 {
+  --depth: 0.44;
+  --shape-o: 0.5;
+  --blur: 0.4;
+  width: 10vw;
+  height: 10vw;
+  top: 275vh;
+  left: 6vw;
+}
+.backdrop .s34 {
+  --depth: 0.27;
+  --shape-o: 0.45;
+  --blur: 0.7;
+  width: 16vw;
+  height: 12vw;
+  top: 312vh;
+  right: 4vw;
+  rotate: -11deg;
+}
+.backdrop .s35 {
+  --depth: 0.41;
+  --shape-o: 0.5;
+  --blur: 0.42;
+  width: 9vw;
+  height: 9vw;
+  top: 342vh;
+  left: 32vw;
+}
+.backdrop .s36 {
+  --depth: 0.23;
+  --shape-o: 0.4;
+  --blur: 0.8;
+  width: 19vw;
+  height: 6vw;
+  top: 366vh;
+  left: 12vw;
+  rotate: 8deg;
+}
 
-header,
+/* Lifts page content above the fixed .backdrop (z-index 0). The header is
+   deliberately excluded — it needs `position: sticky` from its utility class,
+   and this rule is unlayered, so listing it here would override that. */
 main,
 footer {
   position: relative;
   z-index: 1;
+}
+
+/* Logo watermarks on project cards ship as white-filled SVGs, which vanish
+   against the light surface. Inverting flips them to near-black there. */
+[data-theme="light"] .card-mark {
+  filter: invert(1);
+}
+
+/* ---------- text over artwork ----------
+   Photo cards put small muted type straight onto image detail, where the
+   letterforms lose against the texture behind them. Three things do the work:
+   soften the photo so it stops competing, drop a bottom-weighted scrim under
+   the copy, and give the type a tight dark shadow so edges stay defined. */
+.card-photo-img {
+  filter: blur(1.5px) brightness(0.85) saturate(1);
+}
+.card-scrim {
+  background: linear-gradient(
+    to top,
+    rgb(4 8 15 / 0.8) 0%,
+    rgb(4 8 15 / 0.62) 45%,
+    rgb(4 8 15 / 0.34) 100%
+  );
+}
+
+/* Fixed light values rather than theme tokens: the scrim is dark in both
+   themes, so the copy should be too. */
+.card-photo h3 {
+  color: #fff;
+  text-shadow: 0 1px 12px rgb(0 0 0 / 0.7);
+}
+.card-photo p {
+  color: rgb(255 255 255 / 0.9);
+  text-shadow: 0 1px 8px rgb(0 0 0 / 0.75);
+}
+/* Amber over the photo — warmer than ice against the artwork, and it ties the
+   cards to the accent already used for focus and the remote. */
+.card-photo .card-tag {
+  color: var(--c-amber);
+  text-shadow: 0 1px 10px rgb(0 0 0 / 0.8);
+}
+.card-photo .card-chip {
+  color: rgb(255 255 255 / 0.92);
+  background-color: rgb(6 10 18 / 0.55);
+  border-color: rgb(255 255 255 / 0.24);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* The warm lift on hover, shared by every card. */
+.project-card {
+  transition:
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+.project-card:hover {
+  box-shadow:
+    0 0 0 1px var(--c-glow),
+    0 14px 44px -16px var(--c-glow);
+}
+
+/* A brand-coloured card replaces --c-surface with an arbitrary colour, so the
+   ink/muted tokens lose their contrast guarantee. These pin the copy to white,
+   which is the readable choice against the darker end of a brand ramp. */
+.card-brand {
+  border-color: rgb(255 255 255 / 0.22);
+}
+.card-brand h3 {
+  color: #fff;
+  text-shadow: 0 1px 10px rgb(0 40 24 / 0.45);
+}
+.card-brand p {
+  color: rgb(255 255 255 / 0.94);
+  text-shadow: 0 1px 8px rgb(0 40 24 / 0.5);
+}
+.card-brand .card-tag {
+  color: rgb(255 255 255 / 0.95);
+  text-shadow: 0 1px 8px rgb(0 40 24 / 0.5);
+}
+.card-brand .card-chip {
+  color: rgb(255 255 255 / 0.88);
+  background-color: rgb(255 255 255 / 0.14);
+  border-color: rgb(255 255 255 / 0.26);
+}
+.card-brand:hover {
+  border-color: rgb(255 255 255 / 0.45);
+}
+/* The watermark is already white — the light-theme invert would turn it black
+   on green, so it stays disabled on branded cards. */
+[data-theme="light"] .card-brand .card-mark {
+  filter: none;
 }
 
 /* ---------- glass surfaces ---------- */

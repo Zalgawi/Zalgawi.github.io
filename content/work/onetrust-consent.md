@@ -4,6 +4,8 @@ tag: "Convatec · Compliance"
 summary: "Integrated the OneTrust consent platform across EMEA, APAC and NAM, handling bulk data workflows and per-region rules."
 stack: ["OneTrust", "GDPR", "Data workflows"]
 year: "2024"
+image: "OTImage.svg"
+brand: ["#387958", "#6CEEAD"]
 order: 2
 ---
 

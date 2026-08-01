@@ -78,9 +78,6 @@ const now = [
   },
 ];
 
-// Public assets need the base prefix applied by hand — Nuxt rewrites
-// <NuxtLink> and bundled assets, but not a plain href into /public. Matters
-// only when deployed to a subpath, e.g. a GitHub Pages project site.
 const base = useRuntimeConfig().app.baseURL;
 const cvHref = (base.endsWith("/") ? base : base + "/") + "zayd-algawi-cv.pdf";
 
@@ -190,6 +187,8 @@ const eyebrow =
           :tag="p.tag"
           :summary="p.summary"
           :stack="p.stack"
+          :image="p.image"
+          :brand="p.brand"
           @open="active = { title: p.title, tag: p.tag, path: p.path }"
         />
       </div>
@@ -215,35 +214,6 @@ const eyebrow =
         </div>
       </div>
     </section>
-
-    <!--<section :class="section" data-section>
-      <p :class="eyebrow">Interaction detail</p>
-      <div class="rounded-2xl border border-line bg-surface p-6 md:p-8">
-        <p class="mb-6 max-w-[58ch] text-[15px] text-muted">
-          The remote in the corner drives this whole page — focus moves
-          geometrically rather than in source order, the way it has to when
-          there's no cursor.
-          <b class="font-mono text-[13.5px] font-medium text-amber">← ↑ → ↓</b>
-          on a keyboard does the same thing,
-          <b class="font-mono text-[13.5px] font-medium text-amber">Enter</b>
-          selects,
-          <b class="font-mono text-[13.5px] font-medium text-amber">Esc</b>
-          exits. It's a habit from building for TV remotes, and it's the same
-          discipline that makes anything work for keyboard users.
-        </p>
-        <div class="flex flex-wrap gap-2.5">
-          <button
-            v-for="pl in platforms"
-            :key="pl"
-            type="button"
-            data-nav
-            class="rounded-full border border-line bg-surface-2 px-3.5 py-2.5 font-mono text-[12.5px] text-ink outline-none"
-          >
-            {{ pl }}
-          </button>
-        </div>
-      </div>
-    </section> -->
 
     <ProjectModal :project="active" @close="active = null" />
   </main>

@@ -1,8 +1,9 @@
 ---
-title: "Legacy rebuild on Nuxt"
-tag: "Convatec · Design systems"
+title: "Convatec"
+tag: "Convatec · eCommerce"
 summary: "Rebuilt legacy front-end components in Nuxt and Tailwind, integrated with Lit web components, Storybook and Optimizely CMS."
 stack: ["Nuxt", "Tailwind", "Lit", "Storybook"]
+image: "CVTImage.png"
 year: "2023—present"
 order: 1
 ---

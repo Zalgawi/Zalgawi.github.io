@@ -1,9 +1,10 @@
 ---
 title: "Tennis TV"
 tag: "FX Digital · Streaming"
-summary: "Live and on-demand tennis across web and TV platforms, where playback has to hold up on low-powered hardware."
-stack: ["React Native", "Video", "Performance"]
+summary: "Helped build ATP Media's premium Tennis TV streaming service across 6 CTV platforms"
+stack: ["React Native", "LightningJS"]
 year: "2021—2023"
+image: "TTVImage.jpeg"
 order: 4
 ---
 
